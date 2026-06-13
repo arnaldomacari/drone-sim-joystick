@@ -2,7 +2,7 @@
 
 # Drone Sim Joystick
 
-**Controle físico sem fio para simuladores de drone, construído com ESP32-C3 e dois joysticks analógicos.**
+**Controle físico sem fio para simuladores de drone, construído com ESP32-C3 e dois módulos de joysticks analógicos.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Platform: ESP32-C3](https://img.shields.io/badge/Platform-ESP32--C3-red.svg)](https://github.com/espressif/arduino-esp32)
@@ -17,7 +17,7 @@
 
 ## Visão geral
 
-O **Drone Sim Joystick** transforma os movimentos de dois joysticks analógicos em comandos de teclado enviados por Bluetooth Low Energy (BLE). Para o computador, o ESP32-C3 funciona como um teclado sem fio chamado `Controle Drone`.
+O **Drone Sim Joystick** transforma os movimentos de dois módulos de joysticks analógicos em comandos de teclado enviados por Bluetooth Low Energy (BLE). Para o computador, o ESP32-C3 funciona como um teclado sem fio chamado `Controle Drone`.
 
 O projeto foi criado como uma alternativa acessível para estudo, prototipagem e treinamento de pilotagem em simuladores. Como utiliza teclas comuns, pode ser configurado em qualquer software ou jogo que permita mapear comandos de teclado.
 
@@ -37,16 +37,16 @@ O projeto foi criado como uma alternativa acessível para estudo, prototipagem e
 
 | Controle | Movimento | Tecla enviada |
 |---|---|---|
-| Joystick esquerdo | Para frente | `W` |
-| Joystick esquerdo | Para trás | `S` |
-| Joystick esquerdo | Esquerda | `A` |
-| Joystick esquerdo | Direita | `D` |
-| Joystick direito | Para cima | `↑` |
-| Joystick direito | Para baixo | `↓` |
-| Joystick direito | Esquerda | `←` |
-| Joystick direito | Direita | `→` |
+| Joystick esquerdo | Para cima | `W` |
+| Joystick esquerdo | Para baixo | `S` |
+| Joystick esquerdo | Giro anti-horário | `A` |
+| Joystick esquerdo | Giro sentido horário | `D` |
+| Joystick direito | Para frente | `↑` |
+| Joystick direito | Para trás  | `↓` |
+| Joystick direito | Para Esquerda | `←` |
+| Joystick direito | Para Direita | `→` |
 
-O significado de cada comando depende do mapeamento adotado no simulador. Uma configuração comum é usar o joystick esquerdo para aceleração e guinada, e o direito para arfagem e rolagem.
+O significado de cada comando depende do mapeamento adotado no simulador. 
 
 ## Hardware
 
@@ -76,12 +76,24 @@ O significado de cada comando depende do mapeamento adotado no simulador. Uma co
 > [!IMPORTANT]
 > Alimente as saídas analógicas dos joysticks com **3,3 V**. Não aplique 5 V diretamente nos GPIOs do ESP32-C3.
 
+
 ## Montagem
 
 Conecte os módulos conforme o diagrama abaixo. Todos os componentes devem compartilhar o mesmo GND.
-
 <div align="center">
   <img src="images/esquema.png" alt="Diagrama elétrico do Drone Sim Joystick" width="850">
+</div>
+
+
+O esquema e o protoboard seguem os mesmos padrões de cores para facilitar entender a montagem. 
+<div align="center"> 
+  <img src="images/protoboard.jpeg" alt="Protótipo do Drone Sim Joystick montado em protoboard" width="850">
+</div>
+
+
+Pinout do ESP32-C3 Super Mini 
+<div align="center"> 
+  <img src="images/esp32_c3_super_mine.png" alt="ESP32-C3 Pinout " width="850">
 </div>
 
 Para uma montagem alimentada por USB, a bateria e o conversor step-up podem ser omitidos.
@@ -97,6 +109,7 @@ Para uma montagem alimentada por USB, a bateria e o conversor step-up podem ser 
 - Pacote de placas [`esp32` da Espressif](https://github.com/espressif/arduino-esp32)
 - Biblioteca [`HijelHID_BLEKeyboard`](https://github.com/HijelHub/HijelHID_BLEKeyboard)
 
+
 O protótipo foi desenvolvido com o pacote `esp32` 3.3.10 e a biblioteca `HijelHID_BLEKeyboard` 0.5.0.
 
 ### 1. Clone o repositório
@@ -109,26 +122,17 @@ cd drone-sim-joystick
 ### 2. Prepare a IDE Arduino
 
 1. Abra o **Gerenciador de Placas** e instale `esp32` por Espressif Systems.
-2. Abra o **Gerenciador de Bibliotecas** e instale `HijelHID_BLEKeyboard`.
-3. Conecte o ESP32-C3 ao computador com um cabo USB de dados.
-4. Selecione a placa correspondente ao seu modelo, por exemplo `Nologo ESP32C3 Super Mini`, e escolha a porta serial.
-
-<details>
-<summary>Referências visuais da configuração</summary>
-
-**Pacote de placas**
-
 ![Pacote esp32 instalado na Arduino IDE](images/Boards.png)
 
-**Biblioteca BLE HID**
 
+2. Abra o **Gerenciador de Bibliotecas** e instale `HijelHID_BLEKeyboard`.
 ![Biblioteca HijelHID BLEKeyboard instalada](images/bibliotecaTeclado.png)
 
-**Seleção da placa e da porta**
-
+3. Conecte o ESP32-C3 ao computador com um cabo USB de dados.
+4. Selecione a placa correspondente ao seu modelo, por exemplo `Nologo ESP32C3 Super Mini`, e escolha a porta serial.
 ![Seleção da placa ESP32-C3 Super Mini na Arduino IDE](images/Nologo.png)
 
-</details>
+
 
 ### 3. Compile e grave
 
@@ -140,14 +144,18 @@ cd drone-sim-joystick
 ## Como usar
 
 1. Ligue o controle e ative o Bluetooth no computador.
-2. Procure pelo dispositivo `Controle Drone`.
+2. Procure pelo dispositivo `Controle Drone`, ou o nome dado ao Bluetooth no código. 
+<div align="center">
+  <img src="images/NomeBLE.png" alt="Nome do Bluetooth no código="530">
+  <img src="images/BluetoothConexao.png" alt="Controle Drone detectado na lista de dispositivos Bluetooth" width="530">
+</div>
+
+
 3. Faça o pareamento como um teclado Bluetooth.
 4. Abra o simulador e associe `WASD` e as setas às funções de voo desejadas.
 5. Mova os joysticks e confirme se os comandos respondem na direção esperada.
 
-<div align="center">
-  <img src="images/BluetoothConexao.png" alt="Controle Drone detectado na lista de dispositivos Bluetooth" width="530">
-</div>
+
 
 ### Calibração
 
@@ -162,6 +170,11 @@ Se uma tecla permanecer acionada com o joystick em repouso:
 
 1. Abra o Monitor Serial em `115200 baud`.
 2. Observe os valores `LX`, `LY`, `RX` e `RY` com os joysticks centralizados.
+<div align="left">
+  <img src="images/dadosNoMonitor.png" alt="Dados no Monitor" >
+</div>
+
+
 3. Ajuste `CENTRO` para o valor médio observado.
 4. Aumente `ZONA_MORTA` se houver oscilação perto do centro.
 5. Compile e grave o firmware novamente.
