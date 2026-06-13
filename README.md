@@ -99,7 +99,7 @@ Pinout do ESP32-C3 Super Mini
 Para uma montagem alimentada por USB, a bateria e o conversor step-up podem ser omitidos.
 
 > [!WARNING]
-> Baterias Li-ion exigem proteção contra sobrecarga, descarga excessiva e curto-circuito. Use uma célula protegida e um módulo de carga apropriado; nunca carregue a bateria diretamente pelo circuito mostrado.
+> As baterias de íons de lítio (Li-ion) devem ser protegidas contra sobrecarga, descarga excessiva e curto-circuito. Recomenda-se o uso de uma célula protegida e de um módulo de carregamento adequado. Nunca carregue a bateria diretamente pelo circuito apresentado; utilize sempre um carregador específico para esse tipo de bateria.
 
 ## Instalação
 
