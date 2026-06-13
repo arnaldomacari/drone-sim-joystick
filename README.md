@@ -38,17 +38,28 @@ Ele também serve como base para futuros projetos envolvendo:
 - Entrada analógica por joystick/potenciômetros
 - USB/Bluetooth HID, conforme a versão do projeto
 
+Boards:
+
+![boards](images/Boards.png)
+
+https://github.com/espressif/arduino-esp32
+
+
+ESP32 -C3 super mini 
+![ESP32-C3 Super Mini Pinout](images/esp32_c3_super_mine.png)
+
+
+Bibliotecas
+
+![boards](images/bibliotecaTeclado.png)
+
+https://github.com/HijelHub/HijelHID_BLEKeyboard
+
 ---
 
 ## 📷 Imagens do projeto
 
-> Adicione aqui fotos do joystick, montagem, esquema elétrico e testes.
-
-```text
-/images/joystick.jpg
-/images/montagem.jpg
-/images/esquema.png
-```
+![Protoboards](images/protoboard.jpeg)
 
 
 ## 📁 Estrutura do projeto
@@ -75,12 +86,12 @@ Configure os eixos no simulador de drone.
 
 
 ## 🔌 Ligações básicas
-Função	Pino
+<!--Função	Pino
 Eixo X	GPIO XX
 Eixo Y	GPIO XX
 Acelerador	GPIO XX
 Botão 1	GPIO XX
-Botão 2	GPIO XX
+Botão 2	GPIO XX -->
 ![Foto do joystick](images/esquema.png)
 
 
