@@ -1,6 +1,6 @@
 # 🎮 Drone Sim Joystick
 
-Joystick desenvolvido para controle de drones em simuladores, usando microcontrolador e comandos personalizados.
+Joystick desenvolvido para controle de drones em simuladores Aurora, MatLab, Copellia  e Pythom. , utilizando microcontrolador ESP32 - C3 Super Mine e comandos que simulam um teclado, garantindo alta compatibilidade a muitos outros simuladores e jogos.
 
 O objetivo do projeto é criar uma interface física simples, barata e funcional para treinar pilotagem de drone em ambiente simulado.
 
@@ -57,7 +57,11 @@ https://github.com/HijelHub/HijelHID_BLEKeyboard
 
 ---
 
-## 📷 Imagens do projeto
+# 📷 Montando o Circuito do Joystick
+
+## 🔌 Ligações básicas
+
+![Foto do joystick](images/esquema.png)
 
 ![Protoboards](images/protoboard.jpeg)
 
@@ -78,21 +82,18 @@ drone-sim-joystick/
 ## 🚀 Como usar
 Clone o repositório:
 git clone https://github.com/SEU_USUARIO/drone-sim-joystick.git
-Abra o firmware na Arduino IDE ou no VS Code.
+Abra o firmware na Arduino IDE.
+
+
+
+
 Compile e grave no microcontrolador.
 Conecte o joystick ao computador.
 Configure os eixos no simulador de drone.
 
 
 
-## 🔌 Ligações básicas
-<!--Função	Pino
-Eixo X	GPIO XX
-Eixo Y	GPIO XX
-Acelerador	GPIO XX
-Botão 1	GPIO XX
-Botão 2	GPIO XX -->
-![Foto do joystick](images/esquema.png)
+
 
 
 # 🧪 Status do projeto

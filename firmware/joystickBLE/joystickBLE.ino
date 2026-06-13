@@ -1,6 +1,6 @@
 #include <HijelHID_BLEKeyboard.h>
 
-HijelHID_BLEKeyboard keyboard("Controle Bebop");
+HijelHID_BLEKeyboard keyboard("Controle Drone");
 
 // Joyssdtick esquerdo - WASD
 const int JOY_L_X = 4;
