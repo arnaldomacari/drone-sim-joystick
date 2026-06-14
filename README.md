@@ -101,6 +101,21 @@ Para uma montagem alimentada por USB, a bateria e o conversor step-up podem ser 
 > [!WARNING]
 > As baterias de íons de lítio (Li-ion) devem ser protegidas contra sobrecarga, descarga excessiva e curto-circuito. Recomenda-se o uso de uma célula protegida e de um módulo de carregamento adequado. Nunca carregue a bateria diretamente pelo circuito apresentado; utilize sempre um carregador específico para esse tipo de bateria.
 
+
+# 🎮 Veja em funcionamento
+
+<p align="center">
+  <a href="https://youtu.be/UaDRoQx5H7E">
+    <img src="images/video.png" width="700">
+  </a>
+</p>
+
+<p align="center">
+Clique na imagem para assistir ao vídeo de demonstração.
+</p>
+
+
+
 ## Instalação
 
 ### Pré-requisitos
